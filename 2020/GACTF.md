@@ -6,6 +6,26 @@
 
 ## Writeup
 
+[GACTF Writeup By星盟安全团队-官方wp](https://mp.weixin.qq.com/s/0cOsuIFJwHbHIYvluQq4WQ)
+
+[GACTF-WriteUp-chamd5](https://mp.weixin.qq.com/s/uL2yEuSKJGNWGaNYsQIjsg)
+
+[XCTF-GACTF 2020 Writeup-WEB](https://www.gem-love.com/ctf/2621.html)
+
+[GACTF Writeup By V&N（WEB部分）](https://mp.weixin.qq.com/s/H0-imfruCTIXtMG16a9CIA)
+
+[GACTF Writeup By V&N（RE和PWN部分）](https://mp.weixin.qq.com/s/64qd_Z0XYZeTv3TIgTVEbw)
+
+[GACTF Writeup By V&N（MISC部分）](https://mp.weixin.qq.com/s/TXXyzswABUv4cLDOw5SdIw)
+
+[GACTF Writeup By V&N（CRYPTO部分）](https://mp.weixin.qq.com/s/c4bK2R_n_r5q_7rSidEuTg)
+
+[GACTF2020 Minecraft Redstone Music WP](http://z.mofalongmao.xyz/wordpress/index.php/2020/08/31/gactf2020-minecraft-redstone-music-wp/)
+
+
+
+## 附加链接
+
 链接：https://pan.baidu.com/s/1ml1ZknT6Zdn3VLrLC_Tk6Q 提取码：hdxw
 
 链接：https://share.weiyun.com/HnuxFzfY 密码：scnal1
@@ -60,6 +80,8 @@
 > http://124.70.135.106:12564 
 > Overseas:
 > http://149.28.31.156:12564
+
+c++沙箱，whitelist + blacklist
 
 #### easy_kernel(2solved,952pt)
 > hint1:
@@ -433,7 +455,7 @@ import string
 app = Flask(__name__)
 
 
-white_list = string.ascii_letters + string.digits + "()_-{}.&[]=/"
+white_list = string.ascii_letters + string.digits + '()_-{}."[]=/'
 black_list = ["codecs", "system", "for", "if",
               "end", "os", "eval", "request", "write",
               "mro", "compile", "execfile", "exec",
@@ -466,11 +488,11 @@ def hello_world():
         return render_template_string("<h1>request.form[\"name\"]<h1>")
 
     if name == "":
-		return render_template_string("<h1>hello world!<h1>")
+        return render_template_string("<h1>hello world!<h1>")
 
-	check(name)
-	template = '<h1>hello {}!<h1>'.format(name)
-	res = render_template_string(template)
+    check(name)
+    template = '<h1>hello {}!<h1>'.format(name)
+    res = render_template_string(template)
     if "flag" in res:
         abort(500, "hacker")
     return res
@@ -487,6 +509,7 @@ if __name__ == '__main__':
 > 
 > China：124.71.191.175 80
 > Overseas: 202.182.118.236 80
+
 源码下载：www.zip
 
 ### Reverse
